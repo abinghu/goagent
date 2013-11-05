@@ -19,12 +19,18 @@
 #      Wang Wei Qiang <wwqgtxx@gmail.com>
 #      Poly Rabbit    <mcx_221@foxmail.com>
 
+#添加了一个__version__变量
 __version__ = '3.0.5'
 
+#导入3个模块
 import sys
 import os
 import glob
-
+ 
+#sys.path是一系列的字符串，指定了模块的搜索路径,这里添加搜索路径
+#glob.glob是一个unix风格的正则表达式路径匹配工具
+#os.path.abspath()获取一个绝对路径
+#__file__表示当前执行脚本的路径,因为有可能是相对路径，所以需要os.path.abspath()来取得绝对路径
 sys.path += glob.glob('%s/*.egg' % os.path.dirname(os.path.abspath(__file__)))
 
 try:
